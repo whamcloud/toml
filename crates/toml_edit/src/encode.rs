@@ -368,7 +368,7 @@ pub(crate) fn to_string_repr(
         output.push_str(style.standard_end());
     }
 
-    Repr::new_unchecked(output)
+    Repr::new(output)
 }
 
 #[derive(Copy, Clone, Debug, PartialEq, Eq)]
@@ -489,7 +489,7 @@ fn infer_style(value: &str) -> (StringStyle, bool) {
 
 impl ValueRepr for i64 {
     fn to_repr(&self) -> Repr {
-        Repr::new_unchecked(self.to_string())
+        Repr::new(self.to_string())
     }
 }
 
@@ -513,17 +513,17 @@ fn to_f64_repr(f: f64) -> Repr {
             }
         }
     };
-    Repr::new_unchecked(repr)
+    Repr::new(repr)
 }
 
 impl ValueRepr for bool {
     fn to_repr(&self) -> Repr {
-        Repr::new_unchecked(self.to_string())
+        Repr::new(self.to_string())
     }
 }
 
 impl ValueRepr for Datetime {
     fn to_repr(&self) -> Repr {
-        Repr::new_unchecked(self.to_string())
+        Repr::new(self.to_string())
     }
 }

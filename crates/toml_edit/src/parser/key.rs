@@ -24,7 +24,7 @@ pub(crate) fn key(input: &mut Input<'_>) -> PResult<Vec<Key>> {
             1..,
             (ws.span(), simple_key, ws.span()).map(|(pre, (raw, key), suffix)| {
                 Key::new(key)
-                    .with_repr_unchecked(Repr::new_unchecked(raw))
+                    .with_repr(Repr::new(raw))
                     .with_dotted_decor(Decor::new(
                         RawString::with_span(pre),
                         RawString::with_span(suffix),

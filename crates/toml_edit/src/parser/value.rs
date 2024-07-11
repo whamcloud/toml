@@ -90,23 +90,23 @@ fn apply_raw(mut val: Value, span: std::ops::Range<usize>) -> Result<Value, std:
     match val {
         Value::String(ref mut f) => {
             let raw = RawString::with_span(span);
-            f.set_repr_unchecked(Repr::new_unchecked(raw));
+            f.set_repr_unchecked(Repr::new(raw));
         }
         Value::Integer(ref mut f) => {
             let raw = RawString::with_span(span);
-            f.set_repr_unchecked(Repr::new_unchecked(raw));
+            f.set_repr_unchecked(Repr::new(raw));
         }
         Value::Float(ref mut f) => {
             let raw = RawString::with_span(span);
-            f.set_repr_unchecked(Repr::new_unchecked(raw));
+            f.set_repr_unchecked(Repr::new(raw));
         }
         Value::Boolean(ref mut f) => {
             let raw = RawString::with_span(span);
-            f.set_repr_unchecked(Repr::new_unchecked(raw));
+            f.set_repr_unchecked(Repr::new(raw));
         }
         Value::Datetime(ref mut f) => {
             let raw = RawString::with_span(span);
-            f.set_repr_unchecked(Repr::new_unchecked(raw));
+            f.set_repr_unchecked(Repr::new(raw));
         }
         Value::Array(ref mut arr) => {
             arr.span = Some(span);

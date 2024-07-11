@@ -39,7 +39,7 @@ pub(crate) fn parse_key(raw: &str) -> Result<crate::Key, TomlError> {
     let result = key::simple_key.parse(b);
     match result {
         Ok((raw, key)) => {
-            Ok(crate::Key::new(key).with_repr_unchecked(crate::Repr::new_unchecked(raw)))
+            Ok(crate::Key::new(key).with_repr(crate::Repr::new(raw)))
         }
         Err(e) => Err(TomlError::new(e, b)),
     }
